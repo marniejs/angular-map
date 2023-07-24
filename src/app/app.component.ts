@@ -11,7 +11,35 @@ export class AppComponent implements OnInit{
 
   constructor (private api: ApiService) {}
 
-  ngOnInit(): void {
-    
+  countryName!: string;
+  countryCapital!: string;
+  countryRegion!: string;
+  countryIncome!: string;
+  latitude!: string;
+  longitude!: string;
+
+  changeCountryName(value: string) {
+    this.countryName = value;
   }
+
+  changeCountryCapital(value: string){
+    this.countryCapital = value;
+  }
+
+  changeCountryRegion(value: string){
+    this.countryRegion = value;
+  }
+  
+  changeCountryIncome(value: string){
+    this.countryIncome = value;
+  }
+
+  changeLatitude(value: string){
+    this.latitude = value;
+  }
+  changeLongitude(value: string){
+    this.longitude = value;
+  }
+
+  ngOnInit(): void {}
 }

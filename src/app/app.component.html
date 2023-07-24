@@ -1,1 +1,25 @@
-<app-map></app-map>
+<h1 class="container text-center">World Map</h1>
+<div class="row align-items-start">
+    <div class="col-9">
+        <app-map 
+        (countryName)="changeCountryName($event)"
+        (countryCapital)="changeCountryCapital($event)"
+        (countryRegion)="changeCountryRegion($event)"
+        (countryIncome)="changeCountryIncome($event)"
+        (latitude)="changeLatitude($event)"
+        (longitude)="changeLongitude($event)"></app-map>
+    </div>
+    <div class="col-3">
+        <app-country-data 
+        [countryName]="countryName"
+        [countryCapital]="countryCapital"
+        [countryRegion]="countryRegion"
+        [countryIncome]="countryIncome"
+        [latitude]="latitude"
+        [longitude]="longitude"></app-country-data>
+    </div>
+</div>
+<div class="container text-center">
+    <footer>Data from <a href="https://datahelpdesk.worldbank.org/knowledgebase/topics/125589-developer-information">World Bank</a> | Map from <a href="https://innovsandbox.space/map.html">Innovation Sandbox</a></footer>
+</div>
+

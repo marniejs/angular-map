@@ -5,11 +5,10 @@ import {ApiService } from '../../services/api.service';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent {
+export class MapComponent implements OnInit{
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService)  {}
 
-  @Output() pathId = new EventEmitter<string>;
   @Output() countryName = new EventEmitter<string>;
   @Output() countryCapital = new EventEmitter<string>;
   @Output() countryRegion = new EventEmitter<string>;
@@ -32,6 +31,10 @@ export class MapComponent {
         this.longitude.emit(countryData.longitude);
         console.log(countryData);
       })
+     }
+    
+     ngOnInit(): void {
+       
      }
   }
     
